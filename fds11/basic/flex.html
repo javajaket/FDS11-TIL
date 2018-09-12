@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>플렉스 박스</title>
+  <style>
+    .container {
+      background: yellow;
+      padding: 10px 0;
+      /* 부모컨테이너가 자동값으로 flex-direction: row;설정된다.*/
+      /* direction에 따라서 방향값이 바뀐다. */
+      display: flex;
+      flex-direction: row;
+      /* 직계자식만 움직였다. */
+      /* 붙어 있는 사이를 떨어트린다. */
+      justify-content: space-between;
+      /* align-items: center; */
+      width: 600px;
+      height: 200px;
+      /* 줄바꿈 허용 */
+      flex-wrap: wrap;
+      /* 여러개 item사이를 떨어트린다. */
+      align-content: space-between;
+    }
+    /* .container 빼고 div를 선택(문맥,하위선택자) */
+    .container div{
+      background: pink;
+      display: flex;
+      align-items: center;
+      width: 250px;
+    }
+    .box4 {
+      /* !important 강제로 적용,임시조치 */
+      background: lime !important;
+      order: -1;
+      /* flex-shrink:줌바꿈생기지 않게 줄이거나 확대 */
+      flex-shrink: 4;
+    }
+    /* div를 붙임으로서 우선순위가 높아짐 */
+    div.box1 {
+      background: orange;
+      order: 1;
+      flex-shrink: 2;
+    }
+    div.box2 {
+      background: skyblue;
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- div.box$*4{박스$} -->
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+    <div class="box3">박스3</div>
+    <div class="box4">박스4</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>스타일 겹침</title>
+  <style>
+    /* 경쟁순위: id>class>element */
+    p{
+      color: red;
+    }
+    /* element: 2점,class:10점 */
+    #wrap {
+      color: green;
+    }
+    /* element:2점 */
+    p.note {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <p>여기는 단락 입니다.</p>
+  <p id="wrap">여기는 단락 입니다.</p>
+  <!-- element 셀렉터 1점,class 셀렉터 10점,id 셀렉터 100점 -->
+  <p class="box note">여기는 단락 입니다.</p>
+</body>
+</html>

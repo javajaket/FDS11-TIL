@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>박스모델</title>
+  <style>
+  /* 추가한 만큼 더 늘어난다. */
+  .content-box {
+    background: yellow;
+    width:500px;
+    height: 300px;
+    border: 10px solid blue;
+    padding: 20px 50px 30px;
+    margin: 50px;
+    box-sizing: content-box;
+  }
+  /* padding 값이 포함될 수 있도록 많이 사용한다.(예를 들어
+  모바일 같은 경우 content-box로 할 경우 가로가 안보일 수 있다. */
+  .border-box {
+    background: pink;
+    width:500px;
+    height: 300px;
+    border: 10px solid blue;
+    padding: 20px 50px 30px;
+    margin: 50px;
+    box-sizing: border-box;
+  }  
+  /* 상황에 따라 padding이 유리 할 수 있고 margin이 유리 할 수 있다.
+  이유를 알아 보자. */
+  </style>
+</head>
+<body>
+  <div class="content-box">콘텐츠 박스</div>
+  <div class="border-box">보더박스</div>
+</body>
+</html>

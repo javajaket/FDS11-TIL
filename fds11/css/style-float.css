@@ -1,0 +1,85 @@
+/* CSS를 활용한 레이아웃 및 UI 디자인 */
+body{
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+/* float 이슈를 해결하기 위한 CSS 코드 */
+/* before,after: 기본적으로 inline box로 만들어진다. */
+.clearfix::after {
+  /* content: 우리눈에만 보이는 가짜요소 */
+  content: "";
+  display: block;
+  clear: both;
+} 
+/* 레이아웃 */
+.container{
+  background-color: #aaa;
+  height: 100vh;
+}
+.header, .visual, .main, .slogan, .footer{
+  width: 940px;
+  margin: 0 auto;
+}
+/* 헤더 */
+.header{
+  background-color: yellow;
+  height: 10vh;
+}
+/* 비주얼 */
+.visual{
+  background-color: orange;
+  height: 10vh;
+}
+/* 메인 */
+.main{
+  background-color: blue;
+  /* height: 60vh; */
+  /* overflow:넘치면 감춰라 
+  단점으로  position:relative; 
+       left: -50px;
+  할 경우 위치가 변경된 만큼 가려진다.*/
+  /* overflow: hidden; */
+}
+.main div{
+  height: 100px;
+}
+.group1{
+  background-color: yellow;
+  width: 250px;
+  /* noraml flow: 정상적인 배치 */
+  /* 화면에 띄우다.부모영역안에서 맨왼쪽으로 float된다. */
+  float: left;
+  /* position: relative;
+  left: -50px; */
+}
+.group2{
+  background-color: teal;
+  width: 380px;
+  float: left;
+}
+.group3{
+  background-color: pink;
+  width: 190px;
+  float:left;
+}
+
+/* 슬로건 */
+.slogan{
+  background-color: lime;
+  height: 10vh;
+  margin-top: 50px;
+  /* clear:강제로 마친을 추가한다.Block요소에만 사용할 수 있다. */
+}
+/* 푸터 */
+.footer-bg{
+  background-color: purple;
+}
+.footer{
+  background-color: pink;
+  height: 10vh;
+}
+
