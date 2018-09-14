@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>전이 효과</title>
+  <style>
+    .box1{
+      width: 100px;
+      height: 100px;
+      background: yellow;
+      border: 5px solid purple;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 디폴트 값에 transition 선언하는게 맞다.순서대로 적용된다. */
+      transition-property: transform,background,border-radius,width;
+      /* transition-property: all; */
+      transition-duration: 0.5s;
+      transition-delay: 0s,2s,4s,6s, 8s;
+
+    }
+    /* .box1:hover */
+    .box-act{
+      /* flex는 최근에 나온것이기 때문에 박스1이 부드럽게 움직이지 않는다.
+      부드럽게 하기 위해서는 translate사용해야 한다. */
+      /* justify-content: center;
+      align-items: center; */
+      width: 200px;
+      height: 200px;
+      background: pink;
+      border-radius: 50%;
+      transform: rotate(360deg);
+      transition-property: transform,background,border-radius,width;
+      /* transition-property: all; */
+      /* transition-duration: 0.5s; */
+    }
+  </style>
+</head>
+<body>
+  <div class="btn">
+    <button type="button" class="box-ani">
+      애니메이션 효과
+    </button>
+  </div>
+  <div class="box1">
+    박스 1
+  </div>
+  <script src="../js/jquery.min.js" defer></script>
+  <script src="../js/transition.js" defer></script>
+</body>
+</html>

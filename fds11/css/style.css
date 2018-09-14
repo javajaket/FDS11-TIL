@@ -1,8 +1,9 @@
 /* meta태그  */
-/* @charset "UTF-8"; */
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
 @import url("fonts.css");
+@import url("https://raw.githubusercontent.com/daneden/animate.css/master/animate.css");
 /* 스타일 초기화 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -270,6 +271,14 @@ a:focus {
 }
 /* 비주얼 */
 /* 애니메이션으로 정의할꺼야 */
+@keyframes flowerAni {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 @keyframes textAni {
   0%{
     font-size: 12px;
@@ -292,19 +301,54 @@ a:focus {
   position: relative;
   background: transparent;
   min-height: 120px;
+  /* 각각 깜빡거리는 애니메이션 시간때가 달라야 하기대문에 가상선택자로 나눠서 해보자 */
+  /* background: url("images/ani_flower_01.png") no-repeat 0 -10px,
+              url("images/ani_flower_02.png") no-repeat 670px 0,
+              url("images/ani_flower_03.png") no-repeat 300px 0,
+              url("images/ani_flower_04.png") no-repeat 800px 15px; */
   /* overflow: hidden; */
   /* textAni에서 margin으로 할 경우 visual바깥영역으로 벗어나기 때문에 border-top으로 가둬논다. */
   /* border-top: 2px solid transparent; */
 }
+.visual::before {
+  background: url("images/ani_flower_01.png"),url("images/ani_flower_02.png");
+  background-position: 0 -10px,670px 0;            
+}
+.visual::after {  
+  animation-delay: 1s;
+  background: url("images/ani_flower_03.png"),url("images/ani_flower_04.png");
+  background-position: 300px 0,800px 15px;            
+}
+.visual::before, .visual::after {
+  /* animation-name: flowerAni;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+  /* 대표 단축 생성 사용을 하면 기본값이 생성될수 있다. 확인하기 */
+  animation: flowerAni 2s forwards infinite alternate cubic-bezier(1, 0.04, 0, 1.1);
+  /* 대표속성 아래에 선언해야지 실행 */
+  /* animation-play-state: paused; */
+  content: "";
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* .visual::before, .visual::after를 하위에 놓기 */
+  background-repeat: no-repeat;
+}
 .visual-text {
   position: absolute;
-  background: yellow;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* animation: swing 3000ms infinite alternate; */
   /* 필수적으로 이름과 얼마만큼의 시간(duration)이 필요한지 선언해줘야 한다. */
   animation-name: textAni;
   animation-duration: 3000ms;
   /* fill-mode: 원하는 애니메이션 설정 */
   animation-fill-mode: forwards;
   /* display:inline-block; */
+  z-index: 100;
 }
 /* 메인 */
 .main{
