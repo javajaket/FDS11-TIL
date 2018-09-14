@@ -372,6 +372,7 @@ a:focus {
 /* 로그인 */
 .login {
   background-color: #f37335;
+  background-image: radial-gradient(circle at left top, #f37335,#fdc830);
   box-shadow: 5px 5px 0 0 #aaa;
   padding: 10px;
   border-radius: 5px;
@@ -387,25 +388,30 @@ a:focus {
   background-color: #fff;
   margin-top: 10px;
   border-radius: 5px 5px 0 0;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 .login-form fieldset{
   border: 0;
   padding: 0;
   margin: 0;
-  background: yellow;
   position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 10px;
+}
+.user-pw {
+  margin-top: 6px;
 }
 .login-form label{
-  background: lime;
   /* 4글자만크의 길이로 해라 */
   width: 4em;
   display: inline-block;
 }
 /* input은 내부적으로 inline-block */
 .login-form input{
-  width: 100px;
+  width: 95px;
   height: 22px;
+  /* 커서위치 옮기기 */
+  padding-left: 5px;
 }
 .btn-login{
   width: 50px;
@@ -413,14 +419,33 @@ a:focus {
   margin: 0;
   border:0;
   padding:0;
-  background-color: hsla(0,70%,65%,1);
+  background-color: #f37335;
   color: #fff;
   position: absolute;
   top: 0;
   right: 0;
+  border-radius: 3px;
+  font-size: 1.2rem;
 }
-.user-id {
-  margin-bottom: 6px;
+.sign {
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 2px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.sign a::before{
+  content: "g";
+  font-family: "webcafeIcon";
+  position: relative;
+  top: 2px;
+  color: #f37335;
+}
+.sign a{
+  /* a태그는 inline태그이기 때문에 padding을 늘려도 겹치는 현상이 발생한다. */
+  display: inline-block;
+  letter-spacing: -1px;
+  padding: 8px 0;
 }
 /* fieldset {
   position: relative;
@@ -468,6 +493,58 @@ label {
 }
 .sign {
   background-color: #fff;
+} */
+/* 유효성 검사 배너*/
+.validation-list{
+  margin-top: 20px;
+}
+.validation-list a{
+  display: block;
+  border: 1px solid #999;
+  border-radius: 15px;
+  margin-top: 10px;
+  /* padding: 5px 0; */
+  height: 30px;
+  line-height: 30px;
+  text-indent: 45px;
+  /* background: url("images/validation_icon.png") no-repeat 가로축 세로축; */
+  background: url("images/validation_icon.png") no-repeat 20px 50%,linear-gradient(to bottom, #aaa, #eee);
+  /* display: flex;
+  align-items: center; */
+}
+/* .validation {
+  margin: 20px 0 20px 0;
+}
+.validation-list li {
+  margin-bottom: 10px;
+  /* text-align: center; */
+/* .validation-list a{
+  display: block;
+  background: url(images/validation_icon.png) no-repeat 15px,linear-gradient(to bottom,#ccc,#eee);
+  padding: 5px 5px 5px 35px;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+.validation-list a:hover {
+  color: red;
+} */
+/* term 용어 */
+/* .term{
+  background:linear-gradient(to bottom, #aaa, #eee);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+.term-heading {
+  font-weight: 700;
+}
+.term-container{
+  position: relative;
+}
+.term-container img {
+  position: absolute;
 } */
 /* 슬로건 */
 .slogan{
