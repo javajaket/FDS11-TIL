@@ -49,7 +49,6 @@ table {
 }
 /* 숨김 콘텐츠 */
 .readable-hidden {
-  background-color: red;
   /* display: none; */
   /* 화면에서 감추겠다 */
   /* visibility: hidden; */
@@ -353,14 +352,13 @@ a:focus {
 /* 메인 */
 .main{
   background-color: #fff;
-  height: 60vh;
+  min-height: 450pxp;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 30px 0;
 }
 .group1{
-  background-color: skyblue;
   width: 250px;
 }
 .group2{
@@ -371,6 +369,106 @@ a:focus {
   background-color: skyblue;
   width: 190px;
 }
+/* 로그인 */
+.login {
+  background-color: #f37335;
+  box-shadow: 5px 5px 0 0 #aaa;
+  padding: 10px;
+  border-radius: 5px;
+}
+.login-heading{
+  color: #ff0;
+  font-weight: 700;
+  /* 텍스트 들여쓰기,block상태에서만 사용가능.상자크기에 영향을 주지 않는다. */
+  text-indent: 10px; 
+}
+/* 자식요소이기 때문에 뒤에 배경이 가려진다. */
+.login-form {
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+}
+.login-form fieldset{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: yellow;
+  position: relative;
+}
+.login-form label{
+  background: lime;
+  /* 4글자만크의 길이로 해라 */
+  width: 4em;
+  display: inline-block;
+}
+/* input은 내부적으로 inline-block */
+.login-form input{
+  width: 100px;
+  height: 22px;
+}
+.btn-login{
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border:0;
+  padding:0;
+  background-color: hsla(0,70%,65%,1);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.user-id {
+  margin-bottom: 6px;
+}
+/* fieldset {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  border: none;
+}
+input {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+}
+button {
+  width: 50px;
+  height: 50px;
+  background-color: #f37335;
+  font-size: 12px;
+  color: #fff;
+}
+label {
+  display: inline-block;
+  width: 55px;
+}
+.login {
+  background-color: #f37335;
+  border-radius: 5px;
+  padding: 10px;
+}
+.login-heading{
+  color: yellow;
+  font-weight: 700;
+}
+.user-id, .user-pw {
+  display: inline-block;
+}
+.user-id {
+  margin-bottom: 5px;
+}
+.btn-login {
+  position: absolute;
+  right:8px;
+  top:10px;
+}
+.sign {
+  background-color: #fff;
+} */
 /* 슬로건 */
 .slogan{
   background-color: lime;
