@@ -1,5 +1,5 @@
-/* meta태그  */
 @charset "UTF-8";
+/* 메타태그 */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
 @import url("fonts.css");
@@ -352,7 +352,7 @@ a:focus {
 /* 메인 */
 .main{
   background-color: #fff;
-  min-height: 450pxp;
+  min-height: 450px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
