@@ -161,7 +161,7 @@ a:focus {
 .member li {
   /* li간에 서로 공백이 발생함. 이유:index.html에서 li태그간에 띄어쓰기로 공백이 발생함 */
   /* inline: width or height 설정못함,inline-block: 설정 가능 */
-  display: inline-block;
+  /* display: inline-block; */
   /* float: left; */
   font-size: 1.4rem;
 }
@@ -210,7 +210,7 @@ a:focus {
   float: left;
   border-left: 2px solid rgba(255, 255, 255, 0.5);
 }
-.menu-item:focus, .sub-menu{
+.menu-item:focus, .sub-menu a:focus{
   outline: 0;
 }
 .menu-act .menu-item-text {
@@ -362,7 +362,6 @@ a:focus {
   width: 250px;
 }
 .group2{
-  background-color: skyblue;
   width: 380px;
 }
 .group3{
@@ -546,6 +545,112 @@ label {
 .term-container img {
   position: absolute;
 } */
+/* 웹 관련 용어 */
+.term {
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background: #aaa;
+  background: #aaa linear-gradient(to bottom, #bbb, #eee);
+}
+.term-heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.term-list {
+  margin-top: 10px;
+}
+.term-list-subject, .term-list-brif {
+  width: 145px;
+  float: right;
+}
+.term-list-subject {
+  color: #296897;
+  /* width: 140px;
+  float: right; */
+}
+.term-list-thumbnail{
+  float: left;
+}
+.term-list-thumbnail img {
+  display: block;
+}
+.term-list-brif {
+  padding-top: 5px;
+  /* width: 140px;
+  float: right; */
+}
+/* .even .term-list-subject, .even .term-list-brif{
+  float: left;
+}
+.even .term-list-thumbnail {
+  float: right;
+} */
+/* 홀수 */
+/* .term-list div:nth-child(odd) .term-list-subject,
+.term-list div:nth-child(odd) .term-list-brif{
+float: right;
+}
+.term-list div:nth-child(odd) .term-list-thumbnail{
+  float: left;
+} */
+/* 짝수 */
+/* .term-list div:nth-child(even) .term-list-subject,
+.term-list div:nth-child(even) .term-list-brif{
+float: left;
+}
+.term-list div:nth-child(even) .term-list-thumbnail{
+  float: right;
+} */
+/* 검색 */
+.search {
+  background: #aaa;
+  background: linear-gradient(to bottom, #bbb, #eee);
+  border: 1px solid #aaa;
+  border-bottom: 0;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px;
+}
+.search fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* .search-container{
+  display: flex;
+  justify-content: space-between;
+} */
+.search-form fieldset *{
+  vertical-align: middle;
+}
+.search-form label::before {
+  content: "z";
+  font-family: "WebcafeIcon";
+  /* WebcafeIcon 이미지가 대체적으로 위로 올라가져 있어 포지션 설정 */
+  position: relative;
+  top:2px;
+}
+.search-form input[type="search"] {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 1px 1px 1px 5px;
+  height: 22px;
+  width: 200px;
+  margin: 0 5px 0 4px;
+}
+.btn-search {
+  border: 1px solid #aaa;
+  padding: 0 10px;
+  border-radius: 3px;
+  padding: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  background: #333;
+  width: 40px;
+  height: 22px;
+}
+
 /* 슬로건 */
 .slogan{
   background-color: lime;

@@ -133,19 +133,52 @@
           <h2 class="term-heading">웹 관련 용어</h2>
           <!-- dd,dt를 아무 연관 없는 것을 div로 그룹핑 하면 안된다.  -->
           <dl class="term-list">
-            <div class="odd">
+            <!-- float를 사용할때 width,height 길이를 먼저 생각하고 해라 -->
+            <div class="odd clearfix">
               <dt class="term-list-subject">웹표준 이란?</dt>
               <dd class="term-list-thumbnail">
-              <img src="images/web_standards.gif" alt="W3C 로고">
+                <img src="images/web_standards.gif" alt="W3C 로고">
               </dd>
               <dd class="term-list-brif">
               W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
               </dd>
             </div>
+            <!-- <div class="evenb clearfix">
+                <dt class="term-list-subject">웹표준 이란?</dt>
+                <dd class="term-list-thumbnail">
+                  <img src="images/web_standards.gif" alt="W3C 로고">
+                </dd>
+                <dd class="term-list-brif">
+                W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
+                </dd>
+            </div>
+            <div class="odd clearfix">
+                <dt class="term-list-subject">웹표준 이란?</dt>
+                <dd class="term-list-thumbnail">
+                  <img src="images/web_standards.gif" alt="W3C 로고">
+                </dd>
+                <dd class="term-list-brif">
+                W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
+                </dd>
+              </div> -->
           </dl>
         </section>
       </div>
-      <div class="group group2">그룹2</div>
+      <div class="group group2">
+        <section class="search">
+          <h2 class="readable-hidden">검색</h2>
+          <form action="https://formspree.io/kt5161497@gmail.com" class="search-form" method="POST">
+            <fieldset>
+              <legend class="readable-hidden">검색폼</legend>
+              <div class="search-container">
+                <label for="keyword">자료검색</label>
+                <input type="search" id="keyword" placeholder="검색어를 입력하세요" required>
+                <button type="submit" class="btn-search">검색</button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </div>
       <div class="group group3">그룹3</div>
       <!-- <div class="group clearfix"></div> -->
     </main>
