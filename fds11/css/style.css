@@ -365,7 +365,6 @@ a:focus {
   width: 380px;
 }
 .group3{
-  background-color: skyblue;
   width: 190px;
 }
 /* 로그인 */
@@ -726,6 +725,151 @@ float: left;
   position: relative;
   top: 2px;
   color: #0f0;
+}
+/* 새소식 */
+.news{
+  margin-top: 20px;
+  position: relative;
+}
+.news::before{
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa;
+  background: linear-gradient(to right, #aaa, #fff);
+}
+.news-heading{
+  font-weight: 700;
+  color: #F37335;
+  font-size: 1.5rem;
+}
+.news-article{
+  display: block;
+  margin-top: 35px;
+}
+.news-item{
+  /* padding-left: 130px;
+  position: relative;
+  min-height: 120px; */
+}
+.news-item-heading{
+  font-weight: 700;
+}
+.news-item-brief{
+  text-align: justify;
+  margin-top: 10px;
+}
+.news-item-thumbnail{
+  /* position: absolute;
+  top: 5px;
+  left: 0;
+  text-align: center; */
+}
+.news-item-thumbnail img{
+  margin-bottom: 15px;
+  box-shadow: 0 15px 25px 0 #aaa;
+}
+.news-item-heading, .news-item-date, .news-item-brief{
+  width: 250px;
+  float: right;
+}
+.news-item-thumbnail{
+  width: 112px;
+  text-align: center;
+}
+.news-item-thumbnail img{
+  /* margin-left: 18px; */
+}
+.news-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+.news-more::before{
+  content: "p";
+  font-family: "webcafeIcon";
+  position: relative;
+  top: 2px;
+  color: #0f3;
+}
+/* 신규 이벤트 및 관련 사이트 */
+.event-related{
+  background: #bbb;
+  background: linear-gradient(to bottom, #bbb, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+.event{
+  position: relative;
+}
+.event-heading, .related-heading{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.event-heading span, .related-heading span{
+  color: #F37335;
+}
+.event-thumbnail, .event-brief{
+  margin: 10px 0;
+}
+.event-thumbnail img{
+  border: 1px solid #999;
+  box-shadow: 5px 5px 0 0 #aaa;
+}
+.btn-event{
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn-event-prev, .btn-event-next{
+  float: left;
+  cursor: pointer;
+  width: 19px;
+  height: 0;
+  padding-top: 18px; 
+  border: 0;
+  background: transparent url("images/back_forward.png") no-repeat;
+}
+.btn-event-prev:focus, .btn-event-next:focus{
+  outline: 1px solid blue;
+  outline-offset: -4px;
+}
+.btn-event-next{
+  margin-left: 5px;
+  background-position: 100% 0;
+}
+.related{
+  border-top: 1px solid #aaa;
+  padding-top: 10px;
+}
+.related-list{
+  background: #fff;
+  margin-top: 10px;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  transition: height 0.5s 0s, background 0.5s 0.5s;
+}
+/* .related-list:hover, .related-list:focus{
+  height: 150px;
+  background: pink;
+} */
+.related-act{
+  height: 150px;
+  background: lime;
+}
+.related-list a{
+  display: block;
+  text-indent: 1em;
 }
 /* 슬로건 */
 .slogan{
