@@ -86,8 +86,8 @@ body {
   background-size: 1000px 500px;
   background-attachment: fixed; */
   /* background 다음에 background-color 선언하기/대표속성부터 먼저하기 */
-  background: #888888;
   background: url("images/bg_flower.png") no-repeat 50% 0,linear-gradient(to bottom,#aaa 0%,#eee 40%,#fff 60%, #fff 100%);
+  background-color: #fff;
   /* Noto Sans KR이 없을 경우 디폴트값 sans-serif를 사용해라 */
   font-family: "Noto Sans KR",sans-serif;
   font-weight: 400;
@@ -963,10 +963,36 @@ float: left;
 }
 /* 푸터 */
 .footer-bg{
-  background-color: purple;
+  background: #aaa;
+  background: linear-gradient(to bottom,#bbb 0%, #eee 40%, #fff 60%,#fff 100%);
 }
 .footer{
-  background-color: pink;
-  height: 10vh;
+  padding: 15px 100px 15px 160px;
+  position: relative;
+}
+.footer-logo {
+  position: absolute;
+  top: 35px;
+  left: 25px;
+}
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+.guide-list {
+  background: #7b8385;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.guide-list a{
+  display: block;
+  padding: 10px;
+}
+.address, .copyright {
+  margin-top: 10px;
 }
 
