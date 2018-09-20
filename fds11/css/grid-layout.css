@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+body {
+  background: silver;
+}
+/* 그리드 컨테이너 */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12,60px);
+  grid-template-rows: 100px 1fr 100px;
+  grid-column-gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 940px;
+  height: 100%;
+  background: repeating-linear-gradient(90deg,rgba(0,0,225,0.2),rgba(0,0,255,0.2) 60px,transparent 60px,transparent 80px);
+}
+/* 헤더 */
+.header {
+  background: yellow;
+  grid-column: 1 /span 8;
+}
+/* 메인 */
+.main {
+  background: lime;
+  grid-column: span 12;
+}
+/* 사이드 */
+.sidebar {
+  background: orange;
+  grid-row: 1;
+  grid-column: 9 /span 4;
+}
+/* 푸터 */
+.footer {
+  background:skyblue;
+  grid-column: span 12;
+}
