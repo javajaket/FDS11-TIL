@@ -8,26 +8,21 @@
   <style>
     .rwd-container {
       background: yellow;
+      width: 50%;
+    }
+    .rwd-video{
       width: 100%;
-    }
-    .rwd-iframe-container {
-      position: relative;
-      width:100%;
-      height: 0 !important;
-      padding-top: calc(9/16 * 100%);
-    }
-    .rwd-iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width:100%;
-      height: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
   <div class="rwd-container">
-    <video></video>
+    <video class="rwd-video"autoplay controls poster="../media/poster.jpg" muted>
+      <source src="../media/stories.mp4">
+      <track src="../media/stories-en.vtt" kind="captions" srclang="en" label="English">
+      <a href="../media/stories-en.vtt">구글 개발자 이야기</a>
+    </video>
   </div>
 </body>
 </html>

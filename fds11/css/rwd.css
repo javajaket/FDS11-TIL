@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+}
+.rwd-img {
+  max-width: 100%;
+  height: auto;
+}
+.header {
+  background: yellow;
+}
+.navigation {
+  background: pink;
+}
+.book {
+  background: lime;
+}
+.news {
+  background: skyblue;
+}
+.board {
+  background: orange;
+}
+.favorite {
+  background: brown;
+}
+.twitter {
+  background: silver;
+}
+.footer {
+  background: purple;
+}
+/* 모바일 및 태블릿 디바이스 */
+@media screen and (max-width: 999px){
+  .container {
+    display: -ms-grid;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 10vh 15vh 25vh 25vh 15vh 10vh;
+        grid-template-rows: 10vh 15vh 25vh 25vh 15vh 10vh;
+  }
+  .header, .navigation, .twitter, .footer {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+  }
+  .favorite {
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+}
+/* 랩탑 및 와이드 스크린 디바이스 */
+@media screen and (min-width: 1000px){
+  body {
+    margin: 0 40px;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% 40% 40%;
+        grid-template-columns: 20% 40% 40%;
+    -ms-grid-rows: 10vh 30vh 20vh 30vh 10vh;
+        grid-template-rows: 10vh 30vh 20vh 30vh 10vh;
+  }
+  .header {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+  }
+  .navigation {
+    -ms-grid-column: 1;
+    grid-column: 1 /2;
+    -ms-grid-row-span: 3;
+    -ms-grid-row: 2;
+    grid-row: 2/5;
+  }
+  .book {
+    -ms-grid-column: 2;
+    grid-column: 2 / 2;
+  }
+  .board {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/ 4;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+  .news {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  .twitter {
+    grid-column: 2/3;
+    grid-row: 4/5
+  }
+  .footer {
+    grid-column: 1/ 4;
+    grid-row: 5/6;
+  }
+}

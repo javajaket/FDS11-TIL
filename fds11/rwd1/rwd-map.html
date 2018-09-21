@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>반응형 지도</title>
+  <style>
+    .rwd-container {
+      width: 50%;
+    }
+    .rwd-map-container {
+      position: relative;
+      width:100%;
+      height: 0 !important;
+      padding-top: 75%;
+    }
+    .rwd-map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="rwd-container">
+    <div class="rwd-map-container">
+      <iframe class="rwd-map"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12410.203090204042!2d125.76754923522596!3d39.0494994005804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357e02836cc7045d%3A0xb8a34a8bda2e189a!2z66aJ652864-EIDXsm5Qx7J286rK96riw7J6l!5e1!3m2!1sko!2skr!4v1537509068038" width="600" height="450" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>

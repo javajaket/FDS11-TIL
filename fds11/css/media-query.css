@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body {
+  background: yellow;
+}
+@media screen and (min-width: 320px) and (max-width: 480px){
+  body {
+    background: pink;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 1024px){
+  body {
+    background: red;
+  }
+}
+@media screen and (min-width: 1025px){
+  body {
+    background: skyblue;
+  }
+}
