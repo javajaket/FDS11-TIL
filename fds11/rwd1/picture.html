@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>고해상도 콘텐츠 이미지</title>
+  <style>
+    .rwd-container {
+      /* width: 50%; */
+      background: pink;
+    }
+    .rwd-img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="rwd-container">
+    <picture>
+      <source srcset="../images/large.jpg">
+      <source srcset="../images/medium.jpg">
+      <source srcset="../images/small.jpg">
+      <img class="rwd-img" src="../images/normal.jpg" alt="고해상도 이미지 학습 예제">
+    </picture>
+  </div>
+</body>
+</html>
