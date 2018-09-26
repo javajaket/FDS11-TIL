@@ -29,7 +29,7 @@ function isPositive(x,y,z) {
   } else if(num <= 0) {
     return false;
   } else {
-    throw new Error('입력값이 잘못되었습니다.)
+    throw new Error('입력값이 잘못되었습니다.')
   }
 }
 
