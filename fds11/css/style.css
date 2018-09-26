@@ -186,7 +186,7 @@ a:focus {
   /* font-size: 1.4rem; */
   text-transform: uppercase;
   /* 터치면적도 고려해줘야 한다.넓게 하기 */
-  padding: 10px;
+  /* padding: 10px; */
 }
 /* 메인 메뉴 */
 .navigation {
