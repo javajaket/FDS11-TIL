@@ -205,7 +205,7 @@ insertHyphen('437027423'); // 반환값: '4370-274-23'
 ```js
 
 function range(start, end) {
-  const arr =[];
+  
   for (let i=start; i<=end; i++){
     arr.push(i);
   }
