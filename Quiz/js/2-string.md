@@ -226,7 +226,7 @@ Camel case의 문자열을 입력받아, snake case로 바꾼 새 문자열을 �
 ```js
 function splitt(str) {
   let snake = '';
-  for(let i =0;i<str.lenght;i++){
+  for(let i =0;i<str.length;i++){
     if(str[i] === str[i].toUpperCase()){
       snake +='_' + str[i].toLowerCase();
     }else{
@@ -239,6 +239,21 @@ function splitt(str) {
 ### 문제 14
 
 Snake case의 문자열을 입력받아, camel case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
+
+```js 
+function camelcase(str){
+  let camle = '';
+  for(let i = 0;i<str.length;i++){
+    if(str[i] === '_'){
+      camle += ''
+    }else if(str[i-1] === '_'){
+      camle += str[i].toUppercase();
+    }else{
+      camle += str[i]
+    }
+  }
+}
+```
 
 ### 문제 15
 
