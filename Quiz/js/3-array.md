@@ -18,14 +18,47 @@ function range(start,end) {
 ### 문제 2
 
 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
-
+```js
+function sum(arr) {
+  return arr.reduce((acc, item) => acc + item, 0);
+}
+```
+```js
+function sum(arr) {
+  let num = 0;
+  for(let i = 0;i<arr.length;i++){
+    num +=arr[i];
+  }
+  return num;
+}
+```
 ### 문제 3
 
 배열을 입력받아, falsy인 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
 
+```js
+function removeFalsy(arr){
+  const newArr = []
+  for(let i = 0;i<arr.length;i++){
+    //if(arr[i])으로 해도 똑같다.
+    if(Boolean(arr[i]) ===true) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
+}
+
+removeFalsy([0,1,NaN,3])
+```
+
 ### 문제 4
 
 배열을 입력받아, 중복된 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
+```js
+const remove = arr => arr.reduce( (prev , current ) => {
+    return prev.indexOf(current) > -1 ? prev : prev.push(current) , prev 
+}, [] );
+```
 
 ### 문제 5
 
@@ -37,6 +70,30 @@ function range(start,end) {
 ```
 addArray([1, 2, 3], [4, 5, 6, 7]) -> [5, 7, 9, 7]
 ```
+```js
+function addArray(arr1, arr2) {
+    if(arr1.length < arr2.length) {
+        [arr1 , arr2] = [arr2 ,arr1];
+    }
+    let index = 0;
+    return arr2.reduce((prev,current) => {
+        prev[index++] += current;
+        return prev;
+    }, arr1)
+}
+
+function addArray(arr1,arr2) {
+  let longer
+  let shorter
+  if(arr1.length > arr2.length){
+    longer = arr1
+    shorter = arr2
+  }else {
+    longer = arr2
+    shorter = arr1
+  }
+}
+```
 
 ### 문제 6
 
@@ -46,7 +103,17 @@ addArray([1, 2, 3], [4, 5, 6, 7]) -> [5, 7, 9, 7]
 ```
 combination([1, 2, 3]); -> [[1, 2], [1, 3], [2, 3]]
 ```
-
+```js
+function combination(arr){
+    let ann = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1 ; j < arr.length; j++) {
+            ann.push([arr[i],arr[j]])
+        }
+    }
+    return ann;
+}
+```
 ### 문제 7
 
 '금액'과 '동전의 종류가 들어있는 배열'를 입력받아, 최소한의 동전을 사용해서 금액을 맞출 수 있는 방법을 출력하는 함수를 작성하세요.

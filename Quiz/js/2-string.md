@@ -200,10 +200,37 @@ function capitalize(str) {
 
 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
 ```js
-function maxWord(str) {
-  const Words = str.split(' ');
-  if(Words.sort((x,y) => x.length -y.length)) return Words.pop();
+//배열 메소드 버전
+function longestWord(input){
+  const splitted = input.split(' ')
+  splitted.sort((x,y) => y.length - x.length)
+  return splitted[0];
 }
+```
+```js
+//아이디어: 한글 자씩 보면서, 지금ㄲ지 봤던 단어중에 "제일 긴" "단어"를 기억해둔다.
+function longestWord(input){
+  let longest = '' //지금까지 봤던 단어 중에 제일 긴 단어
+  let current = '' //내가 지금 보고 있는 단어
+  // 한 글자씩 보기
+  for(let i = 0; i<input.length;i++){
+
+    //내가 보고 있는 글자가 공백이 아니면
+    if(input[i] !== ' '){
+      current += input[i]
+      if(current.length > longest.length){
+        longest = current
+      }
+    } else {
+      //내가 지금 보고 잇는 글자가 공백이면
+      //current를 처음부터 다시 시작
+      current = ''
+    }
+  }
+  return longest;
+}
+
+longestWord('hello fun javascript')
 ```
 ### 문제 12
 
@@ -218,11 +245,32 @@ const print = (s,n) => {
   return newA.join('')
 }
 ```
+```js
+function firstLetters(s,n){
+  if(s.length < n){
+    return s
+  }
+  let memory = ''
+  for(let i = 0;i<s.length;i++){
+    memory += s[i]
+    if(memory.length === n){
+      return memory
+    }
+  }
+}
 
+firstLetters('hello',10)
+```
+```js
+function firstLetters(s,n){
+  return s.slice(0,n)
+}
+
+firstLetters('hello',3)
+```
 ### 문제 13
 
 Camel case의 문자열을 입력받아, snake case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
-
 ```js
 function splitt(str) {
   let snake = '';
@@ -235,6 +283,22 @@ function splitt(str) {
   }
   return snake;
 }
+```
+```js
+//아이디어: 한 글자씩 보면서, 첫 글자가 아닌 대문자를 만났을 경우 바로 앞에 밑줄을 쳐준다.
+function toSnakeCase(input) {
+  let memory = '';
+  for(let i = 0; i<input.length;i++){
+    //만약, 첫 글자가 아닌 대문자를 만났을 경우
+    if(i !== 0 && (input[i].toUpperCase() === input[i])){
+      memory += '_'
+    }
+    memory += input[i].toLowerCase()
+  }
+  return memory
+}
+
+toSnakeCase('JavaScript')
 ```
 ### 문제 14
 
@@ -254,7 +318,6 @@ function camelcase(str){
   }
 }
 ```
-
 ### 문제 15
 
 `String.prototype.split`과 똑같이 동작하는 함수를 작성하세요.
@@ -265,7 +328,29 @@ split('Hello World'); -> ['Hello World']
 split('Hello World', ' '); -> ['Hello', 'World']
 split('let,const,var', ',') -> ['let', 'const', 'var']
 ```
+```js
+function split(input,sep) {
+  //현재 보고 있는 단어
+  let memory = ''
+  let arr = []
+  for(let i = 0;i<input.length;i++){
+    if(input[i] !== sep){
+      memory += input[i]
+    }else {
+      arr.push(memory)
+      memory = ''
+    }
+  }
+  arr.push(memory)
+  return arr
+}
 
+split('hello,fun,javascript',',')
+```
+```js
+'JavaScriptandjava'.split('and') 
+//[ 'JavaScript', 'java' ]
+```
 ### 문제 16
 
 2진수를 표현하는 문자열을 입력받아, 그 문자열이 나타내는 수 타입의 값을 반환하는 함수를 작성하세요. (`parseInt`를 사용하지 말고 작성해보세요.)
