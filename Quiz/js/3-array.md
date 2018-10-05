@@ -130,7 +130,18 @@ coins(263, [100, 50, 10, 5, 1]);
 1
 1
 ```
+```js
+function coins(money, arr){
+  for(let i=0; i<arr.length; i++){
+    while(money >= arr[i]){
+      money = money - arr[i];
+      console.log(arr[i]);  
+    }
+  }
+}
 
+coins(263, [100, 50, 10, 5, 1]);
+```
 ### 문제 8
 
 수 타입의 값만 들어있는 배열을 입력받아, 해당 배열을 오름차순 정렬하는 함수를 작성하세요. (`Array.prototype.sort`를 사용하지 않고 작성해보세요. [선택 정렬](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)을 참고하세요.)
